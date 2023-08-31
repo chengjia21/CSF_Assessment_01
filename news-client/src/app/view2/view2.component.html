@@ -1,0 +1,45 @@
+<h1>Share a News</h1>
+
+
+<div>
+
+<form [formGroup]="shareNewsForm" (ngSubmit)="postNewsfromView2()" style="padding: 30px;">
+
+<tr><label>Title: &nbsp;<input type="text" formControlName="title"></label></tr>
+
+<tr><label>Photo: &nbsp;<input type="text" formControlName="photo"></label>
+  <button
+  class="btn btn-primary"
+  type="button"
+  (click)="uploadPhoto()">Choose File</button>
+</tr>
+
+<tr><label>Description: &nbsp;<input type="text" formControlName="description"></label></tr>
+
+
+
+<form [formGroup]="tagForm" (ngSubmit)="addTags(formTags)"><label>Tags: &nbsp;<input type="text" formControlName="tags" name="tagsForForm"></label>
+  <button
+  class="btn btn-primary"
+  type="submit"
+  (click)="addTags(formTags)"
+  >+</button>
+</form>
+
+
+
+
+<div>{{formTags}}</div>
+<div *ngFor = "let tag of formTags">Tags: {{tag}}</div>
+
+<br>
+
+
+  <button class="btn btn-primary" type="submit" routerLink="/view0">Post News</button>
+</form>
+
+
+<a class="btn btn-primary" routerLink="/view0">Back</a>
+
+</div>
+
